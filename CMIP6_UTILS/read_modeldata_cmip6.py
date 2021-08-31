@@ -210,8 +210,7 @@ def make_filelist_cmip6(self, var, component = 'atmos', activity_id='CMIP', path
               fnames.remove('/projects/NS9034K/CMIP6//CMIP/NCC/NorESM2-MM/historical/r3i1p1f1/Omon/' + var + '/' +gridlabel +'/latest/' + var +'_Omon_NorESM2-MM_historical_r3i1p1f1_'+gridlabel+'_186001-186105.nc')
            if len(fnames)>1:
                fnames = sorted(fnames ,key=lambda x: extract_number(x))
-               if self.name not in ['SAM0-UNICON']: 
-                   checkConsecutive(fnames)
+               checkConsecutive(fnames)
            self.filenames = fnames
            print('\n \n Final list of filenames:')
            print(self.filenames) 
@@ -227,12 +226,11 @@ def extract_number(string):
 def extract_dates(string):
     return string.split('_')[-1].split('.')[0]
 
-
 def checkConsecutive(fnames):
     sorteddates = [extract_dates(x) for x in fnames]
     for i in range(1,len(sorteddates)):
         if int(sorteddates[i].split('01-')[0]) != int(sorteddates[i-1].split('-')[1][:-2])+1:
-            raise Exception('NOTE! The files are not in consecutive order. Please check directory')
+            raise Exception('NOTE! The files are not in consecutive order. Please check number of files in the directory')
             
      
 class Modelinfo:
@@ -268,4 +266,3 @@ class Modelinfo:
         self.grid_label_atmos = grid_atmos
         self.grid_label_ocean = grid_ocean
         self.branchtime_year = branchtime_year
-
