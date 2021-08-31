@@ -20,10 +20,8 @@ from sklearn.linear_model import LinearRegression
 from matplotlib import cm
 
 def Ofx_files(self, var='deptho', path_to_data = '/projects/NS9252K/ESGF/CMIP6/'):
-    models={#'BCC-CSM2-MR': {'ofxpath':path_to_data + '/' + 'ScenarioMIP'  + '/' + self.institute + '/' + self.name + '/ssp370/' + self.realiz + '/Ofx/' + var + '/gn/latest/',
-            #                 'ofxfile': var + '_Ofx_BCC-CSM2-MR_ssp370_r1i1p1f1_gn.nc'},
-            'BCC-CSM2-MR': {'ofxpath':'/projects/NS9252K/ESGF/CMIP6/CMIP/BCC/BCC-ESM1/1pctCO2/r1i1p1f1/Ofx/'+ var +'/gn/latest/',
-                             'ofxfile': var + '_Ofx_BCC-ESM1_1pctCO2_r1i1p1f1_gn.nc'},
+    models={'BCC-CSM2-MR': {'ofxpath':path_to_data + '/' + 'ScenarioMIP'  + '/' + self.institute + '/' + self.name + '/ssp370/' + self.realiz + '/Ofx/' + var + '/gn/latest/',
+                             'ofxfile': var + '_Ofx_BCC-CSM2-MR_ssp370_r1i1p1f1_gn.nc'},
             'BCC-ESM1':{'ofxpath':path_to_data + '/' + 'CMIP'  + '/' + self.institute + '/' + self.name + '/1pctCO2/' + self.realiz + '/Ofx/' + var + '/gn/latest/',
                              'ofxfile': var + '_Ofx_BCC-ESM1_1pctCO2_r1i1p1f1_gn.nc'},
             'CAMS-CSM1-0':{'ofxpath':path_to_data + '/' + 'CMIP'  + '/' + self.institute + '/' + self.name + '/1pctCO2/r2i1p1f1/Ofx/' + var + '/gn/latest/',
@@ -85,11 +83,6 @@ def ecs_models_cmip6():
           'CESM2-FV2':{'institute':'NCAR', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':320},
           'CESM2-WACCM':{'institute':'NCAR', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn', 'gr'], 'variant_labels':['r1i1p1f1'],'branch_yr':69},
           'CESM2-WACCM-FV2':{'institute':'NCAR', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':300},
-    #      # CIESM: the branch time from parent is 600 yrs,
-    #      # but the parent only covers the years 1-500, 
-    #      # however the parent branched off yr 300,
-    #      # so my guess is that the branch time for the abrupt-4xCO2 simulation is yr 300
-    #      #'CIESM':{'institute':'THU', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gr'], 'variant_labels':['r1i1p1f1'],'branch_yr':300},
           'CNRM-CM6-1':{'institute':'CNRM-CERFACS', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gn','gr1'], 'variant_labels':['r1i1p1f2'],'branch_yr':0},
           'CNRM-CM6-1-HR':{'institute':'CNRM-CERFACS', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f2'],'branch_yr':0},
           'CNRM-ESM2-1':{'institute':'CNRM-CERFACS', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gn','gr1'], 'variant_labels':['r1i1p1f2'],'branch_yr':0},
@@ -100,9 +93,6 @@ def ecs_models_cmip6():
           'EC-Earth3-AerChem':{'institute':'EC-Earth-Consortium', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
           'EC-Earth3-Veg':{'institute':'EC-Earth-Consortium', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
           'FGOALS-f3-L':{'institute':'CAS', 'grid_label_atmos':['gr'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
-    #     # FGOALS-g3: branch time from parent says yr 462, 
-    #     # filename indicates yr 473.. I went for filename
-    #     'FGOALS-g3':{'institute':'CAS', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':273},
           'FIO-ESM-2-0':{'institute':'FIO-QLNM', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
           'GFDL-CM4':{'institute':'NOAA-GFDL', 'grid_label_atmos':['gr1'],  'grid_label_ocean':['gn','gr'], 'variant_labels':['r1i1p1f1'],'branch_yr':100},
           'GFDL-ESM4':{'institute':'NOAA-GFDL', 'grid_label_atmos':['gr1'],  'grid_label_ocean':['gn','gr'], 'variant_labels':['r1i1p1f1'],'branch_yr':100},
@@ -126,13 +116,9 @@ def ecs_models_cmip6():
           'MPI-ESM-1-2-HAM':{'institute':'HAMMOZ-Consortium', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':100},
           'MRI-ESM2-0':{'institute':'MRI', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn','gr'], 'variant_labels':['r1i1p1f1','r1i2p1f1'],'branch_yr':0},
           'NESM3':{'institute':'NUIST', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':50},
-    #     # NorCPM1: only 80 years available data
-    #     'NorCPM1':{'institute':'NCC', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
           'NorESM2-LM':{'institute':'NCC', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn','gr'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
           'NorESM2-MM':{'institute':'NCC', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn','gr'], 'variant_labels':['r1i1p1f1'],'branch_yr':0},
           'SAM0-UNICON':{'institute':'SNU', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':273},
-    #     # TaiESM1: very uncertain of the branch time.
-    #     'TaiESM1':{'institute':'AS-RCEC', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f1'],'branch_yr':21},
           'UKESM1-0-LL':{'institute':'MOHC', 'grid_label_atmos':['gn'],  'grid_label_ocean':['gn'], 'variant_labels':['r1i1p1f2'],'branch_yr':0}}
     return models
 
@@ -200,11 +186,8 @@ def make_filelist_cmip6(self, var, component = 'atmos', activity_id='CMIP', path
                 gridlabel = self.grid_label_ocean[0]
         self.gridlabel = gridlabel
         self.path = path_to_data + '/' + self.activity_id  + '/' + self.institute + '/' + self.name + '/' + self.expid + '/' + self.realiz + '/' + self.realm + '/' + self.variable + '/' + gridlabel+ '/' 
-        # need to fix the multiple version challenge. Not all files are necessarily located in 'latest'         print(self.path)
-        print(self.path)
+        #  Not all files are necessarily located in 'latest'
         versions = sorted(glob.glob(self.path +'*'))
-        print(versions)
-        #print(versions[0] +'/' + self.variable +'_' + self.realm +'_' + self.name + '_' + self.expid + '_' + self.realiz + gridlabel + '_*.nc')
         if versions:
             fnames = sorted(glob.glob(versions[0] +'/' + self.variable +'_' + self.realm +'_' + self.name + '_' + self.expid + '_' + self.realiz +'_' + gridlabel + '_*.nc'))
         else:
@@ -223,6 +206,7 @@ def make_filelist_cmip6(self, var, component = 'atmos', activity_id='CMIP', path
            fnames = sorted(glob.glob(version +'/' + self.variable +'_' + self.realm +'_' + self.name + '_' + self.expid + '_' + self.realiz +'_' + gridlabel + '_*.nc'))              
         if fnames:
            if self.name=='NorESM2-MM' and self.realiz == 'r3i1p1f1':
+              # This file is an erroneous file and should not be included in the analysis. Year 1860 is included in the file covering 186001-186912 and already included
               fnames.remove('/projects/NS9034K/CMIP6//CMIP/NCC/NorESM2-MM/historical/r3i1p1f1/Omon/' + var + '/' +gridlabel +'/latest/' + var +'_Omon_NorESM2-MM_historical_r3i1p1f1_'+gridlabel+'_186001-186105.nc')
            if len(fnames)>1:
                fnames = sorted(fnames ,key=lambda x: extract_number(x))
