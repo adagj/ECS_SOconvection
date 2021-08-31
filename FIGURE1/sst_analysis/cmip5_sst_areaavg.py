@@ -222,7 +222,7 @@ def make_avg_sst(models, var, outpath):
             del model
 
 if __name__ == '__main__':
-    outpath = '/scratch/adagj/CMIP5/modeldrift/'
+    outpath = 'outdata_folder/'
     models = ecs_models_cmip5()
     models, realiz = ecs_models_cmip5()
     for var in [ 'tos']:
