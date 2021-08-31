@@ -27,12 +27,12 @@ Please Note!
 
 see https://xesmf.readthedocs.io/en/latest/installation.html)
 
-- **TEOS-10**: For density calculations we use the gsw-python package https://github.com/TEOS-10/GSW-Python :
+- **POP EOS**: For density calculations we use the pop tools provided here https://pop-tools.readthedocs.io/en/latest/api.html#pop_tools.eos:
 
 ```
   (base)$ conda create -n ocn_env
   (base)$ conda activate ocn_env
   (xesmf_env)$ conda install -c anaconda xarray
   (xesmf_env)$ conda install -c conda-forge esmpy scipy dask netCDF4 cftime 
-  (xesmf_env)$ conda install -c conda-forge xesmf psw
+  (xesmf_env)$ conda install -c conda-forge xesmf pop-tools
 ```
