@@ -78,13 +78,8 @@ def make_bounds(modelname, ds):
     return xr.merge([lon_model,lat_model,lon_b_model,lat_b_model])
 
 def make_regridder(modelname, ds, outgrid, grid_weight_path, regrid_mode = 'conservative', reuse_weights=False, periodic = False):
-    ''' The first step of the regridding routine!
-    There is an important reason why the regridding is broken into two steps
-    (making the regridder and perform regridding). For high-resolution grids, 
-    making the regridder (i.e. “computing regridding weights”, explained later) 
-    is quite computationally expensive, 
-    but performing regridding on data (“applying regridding weights”) is still pretty fast.
-    
+    ''' The first step of the regridding routine
+
     Parameters
     ----------
     modelname: str, name of model. NorESM2 has one less gridpoint for cice compared to blom. 
@@ -106,7 +101,7 @@ def make_regridder(modelname, ds, outgrid, grid_weight_path, regrid_mode = 'cons
     return regridder
 
 def regrid_file(ds, var, regridder, outgrid, areao=None, area=None):
-    '''Second step of the regridding routine!
+    '''Second step of the regridding routine 
     
     Parameters
     ----------
