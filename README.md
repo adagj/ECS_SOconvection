@@ -7,11 +7,11 @@ One folder for each published figure. The folder contains analysis script and pl
 ## Read CMIP data
 
 ### CMIP6_UTILS
-Python functions used for analyzing CMIP6 data  
+Python functions used for analyzing CMIP5 and CMIP6 data. Functions used for calculating time, regional and global averages, extract sub-regions, regridding etc. Used for both CMIP5 and CMIP6 data. Some functions used in CMIP6_SEA_ICE_UTILS.py import functions from CMIP6_ATMOS_UTILS.py  
 
-- **CMIP6_ATMOS_UTILS.py**: python functions used for calculating global, seasonal, time avgerages, subtract sub-regions, regridding etc. for atmsopheric CMIP6 data
+- **CMIP6_ATMOS_UTILS.py**: python functions used for atmsophere variables
 
-- **CMIP6_SEAICE_UTILS.py**: python functions used for ocean and sea ice variables regridding to lat-lon grids, gobal averages and sums, extract sub-regions etc. Used for both CMIP5 and CMIP6 data. Some functions used in CMIP6_SEA_ICE_UTILS.py import functions from CMIP6_ATMOS_UTILS.py
+- **CMIP6_SEAICE_UTILS.py**: python functions used for ocean and sea ice variables 
 
 - For the regridding package xesmf to work properly, you need to make a new conda environment before installing the packages:
 
