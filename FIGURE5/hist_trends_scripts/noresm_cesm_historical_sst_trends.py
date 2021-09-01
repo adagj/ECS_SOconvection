@@ -174,10 +174,8 @@ def make_linear_trends_sst(ds):
      dsout.attrs['units']= 'degree C pr decade'
      return dsout
 
-def make_avg_hist(models, var, outpath, areaavg=False):
-    #######RTMTOA##########################
+def make_hist_sst_trends(models, var, outpath, areaavg=False):
     print('HISTORICAL SST TREND CALCULATIONS: \n')
-    ecsvalues={}
     for modelname,expinfo in models.items():
         print(modelname)
         dsout = None
@@ -224,5 +222,5 @@ if __name__ == '__main__':
     models = ecs_models_cmip6()
     models = {'NorESM2-LM':models['NorESM2-LM'], 'NorESM2-MM':models['NorESM2-MM'], 'CESM2': models['CESM2']}
     for var in [ 'tos']:
-        make_avg_hist(models, var, outpath, True)
+        make_hist_sst_trends(models, var, outpath, True)
     
